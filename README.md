@@ -153,19 +153,19 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: #e0f7f7;
+  background: #f5efe6;
 }
 
 header {
-  background: #009688;
-  color: brown;
+  background: #5d4037;
+  color: white;
   padding: 15px;
   text-align: center;
 }
 
 nav a {
   margin: 10px;
-  color: brown;
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
@@ -175,16 +175,16 @@ main {
 }
 
 button {
-  background: #00bcd4;
-  color: brown;
+  background: #8d6e63;
+  color: white;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
 }
 
 footer {
-  background: #009688;
-  color: brown;
+  background: #5d4037;
+  color: white;
   text-align: center;
   padding: 10px;
 }
@@ -193,11 +193,18 @@ footer {
 // SCRIPT.JS
 function calculate() {
   let total = 0;
-  total += document.getElementById('espresso').value * 50;
-  total += document.getElementById('cappuccino').value * 70;
-  total += document.getElementById('latte').value * 80;
-  total += document.getElementById('tea').value * 40;
-  total += document.getElementById('croissant').value * 60;
+
+  const espresso = parseInt(document.getElementById('espresso').value) || 0;
+  const cappuccino = parseInt(document.getElementById('cappuccino').value) || 0;
+  const latte = parseInt(document.getElementById('latte').value) || 0;
+  const tea = parseInt(document.getElementById('tea').value) || 0;
+  const croissant = parseInt(document.getElementById('croissant').value) || 0;
+
+  total += espresso * 50;
+  total += cappuccino * 70;
+  total += latte * 80;
+  total += tea * 40;
+  total += croissant * 60;
 
   document.getElementById('total').innerText = 'Сума: ' + total + ' грн';
 }
